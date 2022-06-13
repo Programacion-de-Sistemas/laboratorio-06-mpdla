@@ -2,6 +2,5 @@
 #include "figures.h"
 
 void display(){
-  //Cuadro blanco
-  interpreter(whiteSquare);
+  interpreter(repeatH(whiteSquare, 2));
 }
