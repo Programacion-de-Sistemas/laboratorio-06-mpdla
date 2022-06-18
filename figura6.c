@@ -18,9 +18,12 @@ void display(){
   char** rowWithPieces2 = superImpose(pieces2, row1);
   free(pieces1);
   free(pieces2);
-  //Figura...
+  //Figura completa
   char** figure = up(rowWithPieces1, rowWithPieces2);
   figure = up(figure, repeatV(up(row2, row1), 2));
+  free(row1);
+  free(row2);
+  figure = up(figure, up(reverse(rowWithPieces2), reverse(rowWithPieces1)));
   free(rowWithPieces1);
   free(rowWithPieces2);
   interpreter(figure);
