@@ -13,14 +13,16 @@ void display(){
   char** pieces1 = join(join(join(join(join(join(join(rook, knight), bishop), queen), king), bishop), knight), rook);
   //Peones blancos
   char** pieces2 = repeatH(pawn, 8);
-  //Figura
+  //Piezas blancas sobre tablero
   char** rowWithPieces1 = superImpose(pieces1, row2);
   char** rowWithPieces2 = superImpose(pieces2, row1);
-  free(row1);
-  free(row2);
   free(pieces1);
   free(pieces2);
-  interpreter(up(rowWithPieces1, rowWithPieces2));
+  //Figura...
+  char** figure = up(rowWithPieces1, rowWithPieces2);
+  figure = up(figure, repeatV(up(row2, row1), 2));
   free(rowWithPieces1);
   free(rowWithPieces2);
+  interpreter(figure);
+  free(figure);
 }
