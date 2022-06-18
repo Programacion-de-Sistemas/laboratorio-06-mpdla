@@ -13,9 +13,12 @@ void display(){
   char** pieces1 = join(join(join(join(join(join(join(rook, knight), bishop), queen), king), bishop), knight), rook);
   //Peones blancos
   char** pieces2 = repeatH(pawn, 8);
-  interpreter(up(pieces1, pieces2));
+  //Figura
+  char** figure = superImpose(up(pieces1, pieces2), up(row2, row1));
   free(row1);
   free(row2);
   free(pieces1);
   free(pieces2);
+  interpreter(figure);
+  free(figure);
 }
