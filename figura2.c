@@ -1,7 +1,6 @@
 #include "chess.h"
 #include "figures.h"
 #include <stdlib.h>
-#include <stdio.h>
 
 void display(){
   char** blackSquare = reverse(whiteSquare);
