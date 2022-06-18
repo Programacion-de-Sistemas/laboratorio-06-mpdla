@@ -9,7 +9,13 @@ void display(){
   char** row2 = reverse(row1);
   free(blackSquare);
   //Piezas
-  interpreter(up(row2, row1));
+  //Piezas blancas (torre, caballo ...)
+  char** pieces1 = join(join(join(join(join(join(join(rook, knight), bishop), queen), king), bishop), knight), rook);
+  //Peones blancos
+  char** pieces2 = repeatH(pawn, 8);
+  interpreter(up(pieces1, pieces2));
   free(row1);
   free(row2);
+  free(pieces1);
+  free(pieces2);
 }
