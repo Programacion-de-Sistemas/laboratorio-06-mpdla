@@ -8,6 +8,6 @@ void display(){
   free(blackSquare);
   char** row = repeatH(twoSquares, 4);
   free(twoSquares);
-  interpreter(row);
+  interpreter(up(reverse(row), row));
   free(row);
 }
