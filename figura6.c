@@ -3,12 +3,13 @@
 #include <stdlib.h>
 
 void display(){
-  //Tablero
+  //Filas de cuadros
   char** blackSquare = reverse(whiteSquare);
-  char** row = repeatH(join(whiteSquare, blackSquare), 4);
+  char** row1 = repeatH(join(whiteSquare, blackSquare), 4);
+  char** row2 = reverse(row1);
   free(blackSquare);
-  char** board = repeatV(up(reverse(row), row), 4);
-  free(row);
-  interpreter(board);
-  free(board);
+  //Piezas
+  interpreter(up(row2, row1));
+  free(row1);
+  free(row2);
 }
