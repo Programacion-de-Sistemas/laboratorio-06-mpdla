@@ -11,8 +11,10 @@ void display(){
   free(twoSquares);
   //Piezas
   char** pieces = join(join(join(join(join(join(join(rook, knight), bishop), queen), king), bishop), knight), rook);
-  
-  interpreter(pieces);
+  //Figura completa
+  char** figure = superImpose(pieces, row);
   free(row);
   free(pieces);
+  interpreter(figure);
+  free(figure);
 }
