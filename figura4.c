@@ -10,7 +10,7 @@ void display(){
   char** row = repeatH(twoSquares, 4);
   free(twoSquares);
   //Piezas
-  char** pieces = join(join(rook, knight), bishop);
+  char** pieces = join(join(join(join(join(join(join(rook, knight), bishop), queen), king), bishop), knight), rook);
   
   interpreter(pieces);
   free(row);
