@@ -14,11 +14,13 @@ void display(){
   //Peones blancos
   char** pieces2 = repeatH(pawn, 8);
   //Figura
-  char** figure = superImpose(up(pieces1, pieces2), up(row2, row1));
+  char** rowWithPieces1 = superImpose(pieces1, row2);
+  char** rowWithPieces2 = superImpose(pieces2, row1);
   free(row1);
   free(row2);
   free(pieces1);
   free(pieces2);
-  interpreter(figure);
-  free(figure);
+  interpreter(up(rowWithPieces1, rowWithPieces2));
+  free(rowWithPieces1);
+  free(rowWithPieces2);
 }
