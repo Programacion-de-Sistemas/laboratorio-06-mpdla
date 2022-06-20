@@ -33,10 +33,12 @@ int main(){
   printf("Ingrese un elemento: ");
   scanf("%d", &element);
   list = addElement(list, element);
-
+  list = addElement(list, element + 1);
+  list = addElement(list, element + 2);
   //Imprimiendo los elementos de la lista
+  printf("Lista:\n");
   for(node *tmp = list; tmp != NULL; tmp = tmp->next){
-    printf("%i\n", tmp->number);
+    printf("%i ", tmp->number);
   }
 
   //Liberando memoria
