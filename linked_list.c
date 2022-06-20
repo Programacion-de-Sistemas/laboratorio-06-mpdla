@@ -29,9 +29,10 @@ node *addElement(node *list, int element){
 
 int main(){
   node *list = NULL;
-
-  list = addElement(list, 45);
-  list = addElement(list, 15);
+  int element;
+  printf("Ingrese un elemento: ");
+  scanf("%d", &element);
+  list = addElement(list, element);
 
   //Imprimiendo los elementos de la lista
   for(node *tmp = list; tmp != NULL; tmp = tmp->next){
