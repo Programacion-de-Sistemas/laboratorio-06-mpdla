@@ -136,7 +136,7 @@ NOTES:
 
 
 #endif
-//1
+
 /* 
  * bitXor - x^y using only ~ and & 
  *   Example: bitXor(4, 5) = 1
@@ -148,6 +148,7 @@ int bitXor(int x, int y) {
   int result = (x & ~y) | (y & ~x);
   return result;
 }
+
 /* 
  * tmin - return minimum two's complement integer 
  *   Legal ops: ! ~ & ^ | + << >>
@@ -155,11 +156,11 @@ int bitXor(int x, int y) {
  *   Rating: 1
  */
 int tmin(void) {
-
-  return 2;
-
+  //El mínimo entero complemento a 2 es: 1000000 (31 0's)
+  int min = 1 << 31;
+  return min;
 }
-//2
+
 /*
  * isTmax - returns 1 if x is the maximum, two's complement number,
  *     and 0 otherwise 
@@ -170,6 +171,7 @@ int tmin(void) {
 int isTmax(int x) {
   return 2;
 }
+
 /* 
  * allOddBits - return 1 if all odd-numbered bits in word set to 1
  *   where bits are numbered from 0 (least significant) to 31 (most significant)
@@ -181,6 +183,7 @@ int isTmax(int x) {
 int allOddBits(int x) {
   return 2;
 }
+
 /* 
  * negate - return -x 
  *   Example: negate(1) = -1.
@@ -191,7 +194,7 @@ int allOddBits(int x) {
 int negate(int x) {
   return 2;
 }
-//3
+
 /* 
  * isAsciiDigit - return 1 if 0x30 <= x <= 0x39 (ASCII codes for characters '0' to '9')
  *   Example: isAsciiDigit(0x35) = 1.
@@ -204,6 +207,7 @@ int negate(int x) {
 int isAsciiDigit(int x) {
   return 2;
 }
+
 /* 
  * conditional - same as x ? y : z 
  *   Example: conditional(2,4,5) = 4
@@ -214,6 +218,7 @@ int isAsciiDigit(int x) {
 int conditional(int x, int y, int z) {
   return 2;
 }
+
 /* 
  * isLessOrEqual - if x <= y  then return 1, else return 0 
  *   Example: isLessOrEqual(4,5) = 1.
@@ -224,7 +229,7 @@ int conditional(int x, int y, int z) {
 int isLessOrEqual(int x, int y) {
   return 2;
 }
-//4
+
 /* 
  * logicalNeg - implement the ! operator, using all of 
  *              the legal operators except !
@@ -236,6 +241,7 @@ int isLessOrEqual(int x, int y) {
 int logicalNeg(int x) {
   return 2;
 }
+
 /* howManyBits - return the minimum number of bits required to represent x in
  *             two's complement
  *  Examples: howManyBits(12) = 5
@@ -251,7 +257,7 @@ int logicalNeg(int x) {
 int howManyBits(int x) {
   return 0;
 }
-//float
+
 /* 
  * floatScale2 - Return bit-level equivalent of expression 2*f for
  *   floating point argument f.
@@ -266,6 +272,7 @@ int howManyBits(int x) {
 unsigned floatScale2(unsigned uf) {
   return 2;
 }
+
 /* 
  * floatFloat2Int - Return bit-level equivalent of expression (int) f
  *   for floating point argument f.
@@ -281,6 +288,7 @@ unsigned floatScale2(unsigned uf) {
 int floatFloat2Int(unsigned uf) {
   return 2;
 }
+
 /* 
  * floatPower2 - Return bit-level equivalent of the expression 2.0^x
  *   (2.0 raised to the power x) for any 32-bit integer x.
@@ -299,6 +307,9 @@ unsigned floatPower2(int x) {
 }
 
 int main(){
-  printf("Ejercicio 1: %d ^ %d = %d\n", 4, 5, bitXor(4, 5));
+  printf("Ejercicio 1:\n");
+  printf("%d ^ %d = %d\n", 4, 5, bitXor(4, 5));
+  printf("Ejercicio 2:\n");
+  printf("Minimo: %d\n", tmin());
   return 0;
 }
