@@ -1,3 +1,5 @@
+#include <stdio.h>
+
 /* 
  * CS:APP Data Lab 
  * 
@@ -143,7 +145,8 @@ NOTES:
  *   Rating: 1
  */
 int bitXor(int x, int y) {
-  return 2;
+  int result = (x & ~y) | (y & ~x);
+  return result;
 }
 /* 
  * tmin - return minimum two's complement integer 
@@ -293,4 +296,9 @@ int floatFloat2Int(unsigned uf) {
  */
 unsigned floatPower2(int x) {
     return 2;
+}
+
+int main(){
+  printf("Ejercicio 1: %d ^ %d = %d\n", 4, 5, bitXor(4, 5));
+  return 0;
 }
