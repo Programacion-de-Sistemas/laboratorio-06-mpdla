@@ -184,7 +184,9 @@ int isTmax(int x) {
  *   Rating: 2
  */
 int allOddBits(int x) {
-  return 2;
+  int oddBits = 0xAAAAAAAA;
+  if(x == oddBits) return 1;
+  else return 0;
 }
 
 /* 
@@ -317,5 +319,8 @@ int main(){
   printf("Ejercicio 3:\n");
   if(isTmax(2147483647)) printf("Es máximo\n");
   else printf("No es máximo\n");
+  printf("Ejercicio 4:\n");
+  if(allOddBits(2863311530)) printf("Todos los bits impares igual a 1\n");
+  else printf("No todos los bits impares igual a 1\n");
   return 0;
 }
