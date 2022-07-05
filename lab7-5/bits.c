@@ -156,7 +156,7 @@ int bitXor(int x, int y) {
  *   Rating: 1
  */
 int tmin(void) {
-  //El mínimo entero complemento a 2 es: 1000000 (31 0's)
+  //El mínimo entero complemento a 2 es: 1000000...(31 0's)
   int min = 1 << 31;
   return min;
 }
@@ -169,7 +169,10 @@ int tmin(void) {
  *   Rating: 1
  */
 int isTmax(int x) {
-  return 2;
+  //El máximo entero complemento a 2 es 0111111...(31 1's), entonces basta con aplicar ~ al mínimo
+  int max = ~(tmin());
+  if(x == max) return 1;
+  else return 0;
 }
 
 /* 
@@ -311,5 +314,8 @@ int main(){
   printf("%d ^ %d = %d\n", 4, 5, bitXor(4, 5));
   printf("Ejercicio 2:\n");
   printf("Minimo: %d\n", tmin());
+  printf("Ejercicio 3:\n");
+  if(isTmax(2147483647)) printf("Es máximo\n");
+  else printf("No es máximo\n");
   return 0;
 }
