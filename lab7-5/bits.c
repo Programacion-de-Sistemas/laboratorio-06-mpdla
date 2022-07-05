@@ -197,7 +197,8 @@ int allOddBits(int x) {
  *   Rating: 2
  */
 int negate(int x) {
-  return 2;
+  int result = x ^ (1 << 31);
+  return result;
 }
 
 /* 
@@ -322,5 +323,7 @@ int main(){
   printf("Ejercicio 4:\n");
   if(allOddBits(2863311530)) printf("Todos los bits impares igual a 1\n");
   else printf("No todos los bits impares igual a 1\n");
+  printf("Ejercicio 5:\n");
+  printf("Negativo de %d es %d\n", 2, negate(2));
   return 0;
 }
