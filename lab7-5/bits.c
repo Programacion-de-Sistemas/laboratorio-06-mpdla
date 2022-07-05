@@ -170,7 +170,7 @@ int tmin(void) {
  */
 int isTmax(int x) {
   //El máximo entero complemento a 2 es 0111111...(31 1's), entonces basta con aplicar ~ al mínimo
-  int max = ~(tmin());
+  int max = ~(1 << 31);
   if(x == max) return 1;
   else return 0;
 }
